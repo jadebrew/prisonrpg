@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
     Rigidbody _rigidbody;
     public float _thrust;
+    private NPC _target;
 
     public GameObject textPanel;
 
@@ -28,20 +29,23 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector3(moveValue.x,0,moveValue.y) * _thrust);
         }
+
+        if((_target != null) && _target.CanSee())
+        {
+            textPanel.SetActive(true);
+        } else {
+            textPanel.SetActive(false);
+        }
+
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void SetTarget(NPC npc)
     {
-        var person = other.GetComponent<NPC>().person;
-        textPanel.SetActive(true);
-        textPanel.transform.Find("Portrait").GetComponent<Image>().sprite = person.portrait;
-        textPanel.transform.Find("Body").GetComponent<TMP_Text>().text = person.chatter;
-        textPanel.transform.Find("Title").GetComponent<TMP_Text>().text = person.longname;
 
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        textPanel.SetActive(false);
+            _target = npc;
+            textPanel.transform.Find("Portrait").GetComponent<Image>().sprite = npc.person.portrait;
+            textPanel.transform.Find("Body").GetComponent<TMP_Text>().text = npc.person.chatter;
+            textPanel.transform.Find("Title").GetComponent<TMP_Text>().text = npc.person.longname;
     }
 }
