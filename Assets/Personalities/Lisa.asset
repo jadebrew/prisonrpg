@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 015b1435cec19f7d0a6c1b15a83263cb, type: 3}
-  m_Name: Inmate 1
+  m_Name: Lisa
   m_EditorClassIdentifier: Assembly-CSharp::Personality
-  shortname: Bob
-  longname: Bob Burger
-  chatter: I stole burgers that's why I am here.
+  shortname: Lisa
+  longname: Lisa Lisa
+  chatter: Leave me alone I hate it here.
   portrait: {fileID: 4804932604101400786, guid: a6eb6c599de3604d093090c11d7bdb17, type: 3}
