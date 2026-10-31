@@ -15,4 +15,4 @@ MonoBehaviour:
   shortname: Bob
   longname: Bob Burger
   chatter: I stole burgers that's why I am here.
-  portrait: {fileID: 4804932604101400786, guid: a6eb6c599de3604d093090c11d7bdb17, type: 3}
+  portrait: {fileID: 5899847947390980637, guid: ad58101590511893ebf8ffdee6f8b88e, type: 3}
